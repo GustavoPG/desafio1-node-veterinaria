@@ -1,7 +1,7 @@
 //operaciones.js
 const fs = require('fs');
 
-// Función para escribir en el archivo
+// Función para escribir
 const escribir = (nombreArchivo, contenido) => {
     let citas = [];
     
@@ -22,14 +22,14 @@ const escribir = (nombreArchivo, contenido) => {
         "enfermedad": contenido[4]
     };
     
-    // Agregar el nuevo registro a la lista de citas
+    // Agregar nuevo registro
     citas.push(registro);
     
-    // Escribir la lista actualizada de citas al archivo
+    // Escribir la lista actualizada
     fs.writeFileSync(nombreArchivo, JSON.stringify(citas, null, 2));
 };
 
-// Función para leer el archivo
+// Función para leer
 const leer = (nombreArchivo) => {
     if (fs.existsSync(nombreArchivo)) {
         const leerArchivo = fs.readFileSync(nombreArchivo, 'utf8');
